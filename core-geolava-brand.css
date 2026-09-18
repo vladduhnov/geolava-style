@@ -1,0 +1,593 @@
+/*
+ * Geolava brand foundations
+ *
+ * Color values and typography roles are consolidated from the supplied
+ * Geolava color and typography stylesheets. Apply `.gl-brand` to the root
+ * element of a Geolava artifact or interface.
+ */
+
+:root {
+  /* Font families */
+  --gl-font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Font weights */
+  --gl-font-weight-extralight: 200;
+  --gl-font-weight-light: 300;
+  --gl-font-weight-regular: 400;
+  --gl-font-weight-bold: 700;
+
+  /* Font sizes */
+  --gl-font-size-heading-1: 72px;
+  --gl-font-size-heading-2: 64px;
+  --gl-font-size-heading-3: 48px;
+  --gl-font-size-heading-4: 32px;
+  --gl-font-size-lead: 24px;
+  --gl-font-size-eyebrow: 20px;
+  --gl-font-size-body: 16px;
+  --gl-font-size-label: 14px;
+  --gl-font-size-caption: 12px;
+  --gl-font-size-metric: 72px;
+
+  /* Line heights */
+  --gl-line-height-display: 1.1;
+  --gl-line-height-heading-4: 1.2;
+  --gl-line-height-lead: 36px;
+  --gl-line-height-lead-light: 34px;
+  --gl-line-height-body: 24px;
+  --gl-line-height-label: 20px;
+  --gl-line-height-caption: 16px;
+
+  /* Letter spacing */
+  --gl-letter-spacing-display: 0;
+  --gl-letter-spacing-eyebrow: 0.11em;
+
+  /* Text measures */
+  --gl-reading-width: 68ch;
+  --gl-display-measure: 20ch;
+  --gl-title-measure: 24ch;
+  --gl-compact-title-measure: 30ch;
+
+  /* Approved image and media aspect ratios */
+  --gl-media-ratio-wide: 16 / 9;
+  --gl-media-ratio-standard: 4 / 3;
+
+  /* Spacing scale: Vercel-style 4px base system */
+  --gl-space-1: 4px;
+  --gl-space-2: 8px;
+  --gl-space-3: 12px;
+  --gl-space-4: 16px;
+  --gl-space-5: 20px;
+  --gl-space-6: 24px;
+  --gl-space-8: 32px;
+  --gl-space-9: 36px;
+  --gl-space-10: 40px;
+  --gl-space-12: 48px;
+  --gl-space-13: 52px;
+  --gl-space-16: 64px;
+
+  /* Section rhythm */
+  --gl-section-internal-gap: var(--gl-space-9);
+  --gl-section-gap: var(--gl-space-13);
+
+  /* Portrait document grid */
+  --gl-page-safe-area: 28px;
+  --gl-grid-columns: 12;
+  --gl-grid-gutter: 12px;
+
+  /* Landscape presentation grid */
+  --gl-slide-width: 1920px;
+  --gl-slide-height: 1080px;
+  --gl-slide-safe-area: 80px;
+  --gl-slide-grid-columns: 12;
+  --gl-slide-grid-gutter: 40px;
+
+  /* Brand colors */
+  --gl-color-purple: rgb(98 102 230);
+  --gl-color-red: rgb(250 45 32);
+  --gl-color-blue: rgb(118 159 218);
+  /* Logo asset only. Do not use this gradient as a decorative background. */
+  --gl-gradient-logo: linear-gradient(
+    90deg,
+    rgb(250 45 32) 0%,
+    rgb(118 159 218) 66%
+  );
+
+  /* Neutral palette */
+  --gl-color-black: rgb(40 40 35);
+  --gl-color-ink-77: rgb(77 77 75);
+  --gl-color-ink-69: rgb(69 69 69);
+  --gl-color-gray-147: rgb(147 147 145);
+  --gl-color-gray-152: rgb(152 152 149);
+  --gl-color-gray-126: rgb(126 126 121);
+  --gl-color-gray-190: rgb(190 190 189);
+  --gl-color-gray-223: rgb(223 223 222);
+  --gl-color-gray-225: rgb(225 225 225);
+  --gl-color-off-white: rgb(247 246 241);
+  --gl-color-background: rgb(254 254 251);
+  --gl-color-white: rgb(255 255 255);
+  --gl-color-pure-black: rgb(0 0 0);
+
+  /* Supporting accents */
+  --gl-color-purple-tint: rgb(163 165 255);
+  --gl-color-purple-tint-muted: rgb(183 185 240);
+  --gl-color-violet: rgb(122 84 247);
+
+  /* Status colors */
+  --gl-color-danger: rgb(216 45 45);
+  --gl-color-positive: rgb(25 157 21);
+  --gl-color-warning: rgb(216 81 64);
+  --gl-color-info: rgb(59 138 253);
+  --gl-color-neutral: var(--gl-color-ink-77);
+
+  /* Semantic color tokens */
+  --gl-surface-page: var(--gl-color-background);
+  --gl-surface-card: var(--gl-color-background);
+  --gl-surface-sunken: var(--gl-color-off-white);
+
+  --gl-border-subtle: var(--gl-color-gray-223);
+  --gl-border-default: var(--gl-color-gray-225);
+  --gl-border-strong: var(--gl-color-gray-190);
+
+  --gl-text-primary: var(--gl-color-black);
+  --gl-text-secondary: var(--gl-color-gray-147);
+  --gl-text-tertiary: var(--gl-color-gray-190);
+
+  --gl-accent-primary: var(--gl-color-purple);
+  --gl-status-danger: var(--gl-color-danger);
+  --gl-status-positive: var(--gl-color-positive);
+  --gl-status-warning: var(--gl-color-warning);
+  --gl-status-info: var(--gl-color-info);
+
+  /*
+   * Chart palette
+   * Charts may use only neutral, negative, or positive data tones.
+   * Filled marks transition vertically from the full color to pure white.
+   */
+  --gl-chart-neutral: var(--gl-color-purple);
+  --gl-chart-negative: #d82d2d;
+  --gl-chart-positive: #288728;
+  --gl-chart-fill-end: var(--gl-color-white);
+  --gl-chart-fill-neutral: linear-gradient(
+    180deg,
+    var(--gl-chart-neutral) 0%,
+    var(--gl-chart-fill-end) 100%
+  );
+  --gl-chart-fill-negative: linear-gradient(
+    180deg,
+    var(--gl-chart-negative) 0%,
+    var(--gl-chart-fill-end) 100%
+  );
+  --gl-chart-fill-positive: linear-gradient(
+    180deg,
+    var(--gl-chart-positive) 0%,
+    var(--gl-chart-fill-end) 100%
+  );
+}
+
+.gl-brand {
+  background: var(--gl-surface-page);
+  color: var(--gl-text-primary);
+  font-family: var(--gl-font-sans);
+  font-size: var(--gl-font-size-body);
+  font-weight: var(--gl-font-weight-regular);
+  line-height: var(--gl-line-height-body);
+  font-kerning: normal;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gl-brand :where(h1, h2, h3, h4, p, ul, ol, figure, blockquote) {
+  margin-block-start: 0;
+}
+
+.gl-brand :where(
+  h1,
+  h2,
+  h3,
+  h4,
+  .gl-h1,
+  .gl-h2,
+  .gl-h3,
+  .gl-h4,
+  .gl-heading-1,
+  .gl-heading-2,
+  .gl-heading-3,
+  .gl-heading-4,
+  .gl-display,
+  .gl-title,
+  .gl-compact-title
+) {
+  color: var(--gl-text-primary);
+  text-wrap: balance;
+}
+
+/*
+ * Text-width limits keep display copy compact and long-form copy readable.
+ * Charts, tables, images, and other data graphics are not constrained by
+ * these measures and may use the full active grid split.
+ */
+.gl-brand :where(h1, .gl-h1, .gl-heading-1, .gl-title) {
+  max-inline-size: var(--gl-title-measure);
+}
+
+.gl-brand .gl-display {
+  max-inline-size: var(--gl-display-measure);
+}
+
+.gl-brand .gl-compact-title {
+  max-inline-size: var(--gl-compact-title-measure);
+}
+
+.gl-brand :where(
+  p,
+  ul,
+  ol,
+  dl,
+  blockquote,
+  figcaption,
+  .gl-reading,
+  .gl-summary,
+  .gl-lead,
+  .gl-lead-light,
+  .gl-body,
+  .gl-body-bold
+) {
+  max-inline-size: var(--gl-reading-width);
+}
+
+.gl-brand :where(
+  p,
+  li,
+  figcaption,
+  blockquote,
+  .gl-lead,
+  .gl-lead-light,
+  .gl-body,
+  .gl-body-bold,
+  .gl-label,
+  .gl-caption
+) {
+  text-wrap: pretty;
+}
+
+/*
+ * Chart tone primitives. Neutral is the default. Use .gl-chart-fill for
+ * filled HTML marks. SVG gradients can use the start and end stop classes.
+ */
+.gl-chart-tone {
+  --gl-chart-color: var(--gl-chart-neutral);
+  --gl-chart-fill: var(--gl-chart-fill-neutral);
+}
+
+.gl-chart-tone[data-tone="negative"] {
+  --gl-chart-color: var(--gl-chart-negative);
+  --gl-chart-fill: var(--gl-chart-fill-negative);
+}
+
+.gl-chart-tone[data-tone="positive"] {
+  --gl-chart-color: var(--gl-chart-positive);
+  --gl-chart-fill: var(--gl-chart-fill-positive);
+}
+
+.gl-chart-mark {
+  border-color: var(--gl-chart-color);
+  color: var(--gl-chart-color);
+  stroke: var(--gl-chart-color);
+}
+
+.gl-chart-fill {
+  background-color: var(--gl-chart-color);
+  background-image: var(--gl-chart-fill);
+}
+
+.gl-chart-gradient-start {
+  stop-color: var(--gl-chart-color);
+}
+
+.gl-chart-gradient-end {
+  stop-color: var(--gl-chart-fill-end);
+}
+
+/*
+ * Canonical shell for vertical reports, one-pagers, letters, and documents.
+ * Padding creates the 28px safe area inside every page edge.
+ */
+.gl-page-shell,
+.gl-page-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--gl-grid-columns), minmax(0, 1fr));
+  gap: var(--gl-grid-gutter);
+  min-width: 0;
+}
+
+.gl-page-shell {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+  padding: var(--gl-page-safe-area);
+}
+
+.gl-page-shell > * {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+/*
+ * Canonical 16:9 shell for landscape presentations and horizontal PDFs.
+ * The stretch grid divides the available width equally across 12 columns.
+ */
+.gl-slide-shell,
+.gl-slide-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    var(--gl-slide-grid-columns),
+    minmax(0, 1fr)
+  );
+  column-gap: var(--gl-slide-grid-gutter);
+  min-width: 0;
+}
+
+.gl-slide-shell {
+  box-sizing: border-box;
+  width: var(--gl-slide-width);
+  height: var(--gl-slide-height);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  padding: var(--gl-slide-safe-area);
+}
+
+.gl-slide-shell > * {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+/*
+ * Page-level split rule for portrait and landscape formats.
+ * Apply exactly one split class to each page or slide grid. Do not combine or
+ * nest different split classes within the same page or slide. Individual
+ * column-span utilities are intentionally omitted to prevent mixed layouts.
+ */
+:where(.gl-page-shell, .gl-page-grid, .gl-slide-shell, .gl-slide-grid):is(
+  .gl-split-6-6,
+  .gl-split-4-8,
+  .gl-split-12
+) {
+  align-items: start;
+  text-align: left;
+}
+
+/*
+ * Split content roles. Copy always occupies the left region. Charts, tables,
+ * images, illustrations, and other visual evidence occupy the right region.
+ */
+:where(.gl-page-shell, .gl-page-grid, .gl-slide-shell, .gl-slide-grid)
+  > .gl-split-copy {
+  width: 100%;
+  max-inline-size: var(--gl-reading-width);
+  min-width: 0;
+  justify-self: start;
+}
+
+:where(.gl-page-shell, .gl-page-grid, .gl-slide-shell, .gl-slide-grid)
+  > .gl-split-media {
+  width: 100%;
+  min-width: 0;
+}
+
+:where(.gl-page-shell, .gl-page-grid, .gl-slide-shell, .gl-slide-grid).gl-split-6-6
+  > .gl-split-copy { grid-column: 1 / span 6; }
+
+:where(.gl-page-shell, .gl-page-grid, .gl-slide-shell, .gl-slide-grid).gl-split-6-6
+  > .gl-split-media { grid-column: 7 / -1; }
+
+:where(.gl-page-shell, .gl-page-grid, .gl-slide-shell, .gl-slide-grid).gl-split-4-8
+  > .gl-split-copy { grid-column: 1 / span 4; }
+
+:where(.gl-page-shell, .gl-page-grid, .gl-slide-shell, .gl-slide-grid).gl-split-4-8
+  > .gl-split-media { grid-column: 5 / -1; }
+
+:where(.gl-page-shell, .gl-page-grid, .gl-slide-shell, .gl-slide-grid).gl-split-12
+  > :where(.gl-split-copy, .gl-split-media) { grid-column: 1 / -1; }
+
+:where(.gl-page-shell, .gl-page-grid, .gl-slide-shell, .gl-slide-grid).gl-split-12 {
+  row-gap: var(--gl-section-internal-gap);
+}
+
+/* Stack content inside sections at 36px and separate sections by 52px. */
+.gl-section-stack {
+  display: grid;
+  row-gap: var(--gl-section-gap);
+}
+
+.gl-section {
+  display: grid;
+  row-gap: var(--gl-section-internal-gap);
+  min-width: 0;
+}
+
+.gl-split-media > :where(
+  img,
+  svg,
+  video,
+  canvas,
+  table,
+  .gl-chart,
+  .gl-table,
+  .gl-illustration
+) {
+  display: block;
+  width: 100%;
+  max-inline-size: 100%;
+}
+
+.gl-split-media > :where(img, svg, video, canvas) {
+  height: auto;
+}
+
+/*
+ * Approved media frames. Apply one ratio class to the frame containing an
+ * image, illustration, or video. Cropping and fitting are defined separately.
+ */
+.gl-media-frame-16-9,
+.gl-media-frame-4-3 {
+  width: 100%;
+  max-inline-size: 100%;
+  overflow: hidden;
+}
+
+.gl-media-frame-16-9 {
+  aspect-ratio: var(--gl-media-ratio-wide);
+}
+
+.gl-media-frame-4-3 {
+  aspect-ratio: var(--gl-media-ratio-standard);
+}
+
+.gl-media-frame-16-9 > :where(img, video),
+.gl-media-frame-4-3 > :where(img, video) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Optional captions sit below their media and remain left aligned. */
+.gl-media-figure {
+  display: grid;
+  width: 100%;
+  margin: 0;
+  row-gap: var(--gl-space-3);
+}
+
+.gl-media-figure > :where(
+  img,
+  picture,
+  video,
+  .gl-media-frame-16-9,
+  .gl-media-frame-4-3
+) {
+  grid-row: 1;
+}
+
+.gl-media-figure > :where(figcaption, .gl-media-caption) {
+  grid-row: 2;
+  justify-self: start;
+  max-inline-size: var(--gl-reading-width);
+  color: var(--gl-text-secondary);
+  font-size: var(--gl-font-size-caption);
+  font-weight: var(--gl-font-weight-regular);
+  line-height: var(--gl-line-height-caption);
+  text-align: left;
+}
+
+/* Typography primitives */
+.gl-h1,
+.gl-heading-1 {
+  font-size: var(--gl-font-size-heading-1);
+  font-weight: var(--gl-font-weight-extralight);
+  line-height: var(--gl-line-height-display);
+  letter-spacing: var(--gl-letter-spacing-display);
+}
+
+.gl-h2,
+.gl-heading-2 {
+  font-size: var(--gl-font-size-heading-2);
+  font-weight: var(--gl-font-weight-extralight);
+  line-height: var(--gl-line-height-display);
+  letter-spacing: var(--gl-letter-spacing-display);
+}
+
+.gl-h3,
+.gl-heading-3 {
+  font-size: var(--gl-font-size-heading-3);
+  font-weight: var(--gl-font-weight-light);
+  line-height: var(--gl-line-height-display);
+  letter-spacing: var(--gl-letter-spacing-display);
+}
+
+.gl-h4,
+.gl-heading-4 {
+  font-size: var(--gl-font-size-heading-4);
+  font-weight: var(--gl-font-weight-light);
+  line-height: var(--gl-line-height-heading-4);
+}
+
+.gl-lead {
+  font-size: var(--gl-font-size-lead);
+  font-weight: var(--gl-font-weight-regular);
+  line-height: var(--gl-line-height-lead);
+}
+
+.gl-lead-light {
+  font-size: var(--gl-font-size-lead);
+  font-weight: var(--gl-font-weight-light);
+  line-height: var(--gl-line-height-lead-light);
+}
+
+.gl-body {
+  font-size: var(--gl-font-size-body);
+  font-weight: var(--gl-font-weight-regular);
+  line-height: var(--gl-line-height-body);
+}
+
+.gl-body-bold {
+  font-size: var(--gl-font-size-body);
+  font-weight: var(--gl-font-weight-bold);
+  line-height: var(--gl-line-height-body);
+}
+
+.gl-eyebrow {
+  font-size: var(--gl-font-size-eyebrow);
+  font-weight: var(--gl-font-weight-bold);
+  line-height: var(--gl-line-height-body);
+  letter-spacing: var(--gl-letter-spacing-eyebrow);
+  text-transform: uppercase;
+}
+
+.gl-label {
+  font-size: var(--gl-font-size-label);
+  font-weight: var(--gl-font-weight-bold);
+  line-height: var(--gl-line-height-label);
+}
+
+.gl-caption {
+  color: var(--gl-text-secondary);
+  font-size: var(--gl-font-size-caption);
+  font-weight: var(--gl-font-weight-regular);
+  line-height: var(--gl-line-height-caption);
+}
+
+.gl-metric {
+  font-size: var(--gl-font-size-metric);
+  font-weight: var(--gl-font-weight-extralight);
+  line-height: var(--gl-line-height-display);
+  letter-spacing: var(--gl-letter-spacing-display);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Responsive protection for large type roles. */
+@media (max-width: 800px) {
+  .gl-h1,
+  .gl-heading-1,
+  .gl-metric {
+    font-size: clamp(48px, 12vw, var(--gl-font-size-heading-1));
+  }
+
+  .gl-h2,
+  .gl-heading-2 {
+    font-size: clamp(42px, 10vw, var(--gl-font-size-heading-2));
+  }
+
+  .gl-h3,
+  .gl-heading-3 {
+    font-size: clamp(36px, 8vw, var(--gl-font-size-heading-3));
+  }
+
+  .gl-h4,
+  .gl-heading-4 {
+    font-size: clamp(28px, 7vw, var(--gl-font-size-heading-4));
+  }
+}
